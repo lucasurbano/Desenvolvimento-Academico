@@ -47,22 +47,30 @@ public class Aplicacao {
 		if (saque) {
 			JOptionPane.showMessageDialog(null, "Saque realizado com sucesso");			
 		} else {
-			JOptionPane.showMessageDialog(null, "O Saldo da conta � insuficiente");
-		}
+			JOptionPane.showMessageDialog(null, "O Saldo da conta eh insuficiente");
+		};
 
 		//Cliente 2	
-		boolean saque = conta2.sacar(Double.parseDouble (JOptionPane.showInputDialog(null,"Informe o valor de saque do cliente "+cliente2.nome)));
+		saque = conta2.sacar(Double.parseDouble (JOptionPane.showInputDialog(null,"Informe o valor de saque do cliente "+cliente2.nome)));
 		if (saque) {
 			JOptionPane.showMessageDialog(null, "Saque realizado com sucesso");			
 		} else {
-			JOptionPane.showMessageDialog(null, "O Saldo da conta � insuficiente");
+			JOptionPane.showMessageDialog(null, "O Saldo da conta eh insuficiente");
 		}
 
 		
 		// pega o saldo atual da conta
-		//saldo = conta1.saldoAtual();
-		//saldo = conta2.saldoAtual();
+		Double saldo = conta1.saldoAtual();
+		saldo = conta2.saldoAtual();
+
+		//Imprimir todas as inforamções e suas alterações realizadas pelo operador
+
+		//Cliente 1
+		JOptionPane.showMessageDialog(null, "O Cliente "+cliente1.nome+"\nPossui a Agencia "+conta1.agencia+"\nPossui a Conta corrente "+conta1.nConta+"\nO seu saldo 			atual eh R$ "+conta1.saldo);
 		
-				
+		//Cliente 2
+		JOptionPane.showMessageDialog(null, "O Cliente "+cliente2.nome+"\nPossui a Agencia "+conta2.agencia+"\nPossui a Conta corrente "+conta2.nConta+"\nO seu saldo 			atual eh R$ "+conta2.saldo);
+
+						
 	}
 }
