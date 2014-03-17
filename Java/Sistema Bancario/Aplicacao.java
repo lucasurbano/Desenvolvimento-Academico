@@ -59,12 +59,10 @@ public class Aplicacao {
 		}
 
 		
-		
 		// pega o saldo atual da conta
 		//saldo = conta1.saldoAtual();
 		//saldo = conta2.saldoAtual();
 		
-		////	
-		
+				
 	}
 }
