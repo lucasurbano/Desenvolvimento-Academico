@@ -5,51 +5,44 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tbl_alunos")
-@NamedQueries({
-		@NamedQuery(name = "Aluno.listar", query = "SELECT aluno FROM Aluno aluno"),
-		@NamedQuery(name = "Aluno.buscarPorCodigo", query = "SELECT aluno FROM Aluno aluno WHERE aluno.codigo =:codigo ")
-
-})
-public class Aluno {
+@Table(name = "tbl_funcionarios")
+public class Funcionario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "alu_codigo", unique = true, nullable = false)
-	private Long codigo;
+	@Column(name = "fun_codigo", unique = true, nullable = false)
+	private long codigo;
 
-	@Column(name = "alu_nome", nullable = false)
-	private String nome;
+	@Column(name = "fun_nome", nullable = false)
+	private long nome;
 
-	@Column(name = "alu_cpf", length = 14, unique = true, nullable = false)
+	@Column(name = "fun_cpf", length = 14, unique = true, nullable = false)
 	private String cpf;
 
-	@Column(name = "alu_endereco", length = 60, nullable = false)
+	@Column(name = "fun_endereco", length = 60, nullable = false)
 	private String endereco;
 
-	@Column(name = "alu_cidade", length = 20, nullable = false)
+	@Column(name = "fun_cidade", length = 20, nullable = false)
 	private String cidade;
 
-	@Column(name = "alu_bairro", length = 20, nullable = false)
+	@Column(name = "fun_bairro", length = 20, nullable = false)
 	private String bairro;
 
-	@Column(name = "alu_estado", length = 20, nullable = false)
+	@Column(name = "fun_estado", length = 20, nullable = false)
 	private String estado;
 
-	@Column(name = "alu_telefone", length = 25)
+	@Column(name = "fun_telefone", length = 25, nullable = false)
 	private String telefone;
 
-	@Column(name = "alu_celular", length = 25)
+	@Column(name = "fun_celular", length = 25, nullable = false)
 	private String celular;
 
-	@Column(name = "alu_email", length = 60, nullable = false)
+	@Column(name = "fun_email", length = 60, nullable = false)
 	private String email;
 
-	public Long getCodigo() {
+	public long getCodigo() {
 		return codigo;
 	}
 
@@ -57,11 +50,11 @@ public class Aluno {
 		this.codigo = codigo;
 	}
 
-	public String getNome() {
+	public long getNome() {
 		return nome;
 	}
 
-	public void setNome(String nome) {
+	public void setNome(long nome) {
 		this.nome = nome;
 	}
 
@@ -127,14 +120,6 @@ public class Aluno {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	@Override
-	public String toString() {
-		return "Aluno [codigo=" + codigo + ", nome=" + nome + ", cpf=" + cpf
-				+ ", endereco=" + endereco + ", cidade=" + cidade + ", bairro="
-				+ bairro + ", estado=" + estado + ", telefone=" + telefone
-				+ ", celular=" + celular + ", email=" + email + "]";
 	}
 
 }
