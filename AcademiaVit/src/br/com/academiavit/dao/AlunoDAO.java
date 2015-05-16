@@ -110,6 +110,7 @@ public class AlunoDAO {
 
 		try {
 			transacao = sessao.beginTransaction();
+
 			// Aluno alunoEditar = buscarPorCodigo(aluno.getCodigo());
 			// alunoEditar.setCidade(aluno.getCidade());
 			// sessao.update(alunoEditar);
