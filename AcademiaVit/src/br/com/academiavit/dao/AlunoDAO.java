@@ -84,26 +84,6 @@ public class AlunoDAO {
 		}
 	}
 
-	// Excluir Alternativo -
-	public void excluir(Long codigo) {
-		Session sessao = HibernateUtil.getSessionFactory().openSession();
-		Transaction transacao = null;
-
-		try {
-			transacao = sessao.beginTransaction();
-			Aluno aluno = buscarPorCodigo(codigo);
-			sessao.delete(aluno);
-			transacao.commit();
-		} catch (RuntimeException ex) {
-			if (transacao != null) {
-				transacao.rollback();
-			}
-			throw ex;
-		} finally {
-			sessao.close();
-		}
-	}
-
 	public void editar(Aluno aluno) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Transaction transacao = null;

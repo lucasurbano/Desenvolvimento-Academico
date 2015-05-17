@@ -15,7 +15,7 @@ public class AlunoDAOTest {
 
 		Aluno a1 = new Aluno();
 		a1.setNome("Lucas Urbano");
-		a1.setCpf("087.696.374-23");
+		a1.setCpf("999.999.999-99");
 		a1.setEndereco("Rua Sebastiao da Rocha");
 		a1.setBairro("Centro");
 		a1.setCidade("Feira Nova");
@@ -53,15 +53,12 @@ public class AlunoDAOTest {
 	}
 
 	@Test
-	@Ignore
 	public void listar() {
 		AlunoDAO dao = new AlunoDAO();
-		List<Aluno> Alunos = dao.listar();
 
-		for (Aluno aluno : Alunos) {
-			System.out.println(aluno);
+		List<Aluno> alunos = dao.listar();
 
-		}
+		System.out.println(alunos);
 
 	}
 
@@ -91,13 +88,6 @@ public class AlunoDAOTest {
 		//
 		// AlunoDAO dao = new AlunoDAO();
 		// dao.excluir(aluno);
-	}
-
-	@Test
-	@Ignore
-	public void excluirPorCodigo() {
-		AlunoDAO dao = new AlunoDAO();
-		dao.excluir(3L);
 	}
 
 	@Test
