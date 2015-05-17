@@ -15,6 +15,7 @@ public class AlunoDAOTest {
 
 		Aluno a1 = new Aluno();
 		a1.setNome("Lucas Urbano");
+
 		a1.setCpf("999.999.999-99");
 		a1.setEndereco("Rua Sebastiao da Rocha");
 		a1.setBairro("Centro");
@@ -53,6 +54,7 @@ public class AlunoDAOTest {
 	}
 
 	@Test
+	@Ignore
 	public void listar() {
 		AlunoDAO dao = new AlunoDAO();
 
@@ -79,25 +81,20 @@ public class AlunoDAOTest {
 	public void excluir() {
 		AlunoDAO dao = new AlunoDAO();
 
-		Aluno aluno = dao.buscarPorCodigo(8L);
-		if (aluno != null) {
-			dao.excluir(aluno);
-		}
-		// Aluno aluno = new Aluno();
-		// aluno.setCodigo(1L);
-		//
-		// AlunoDAO dao = new AlunoDAO();
-		// dao.excluir(aluno);
+		Aluno aluno = dao.buscarPorCodigo(3L);
+
+		dao.excluir(aluno);
 	}
 
 	@Test
 	@Ignore
 	public void editar() {
-		Aluno aluno = new Aluno();
-		aluno.setCodigo(1L);
-		aluno.setCidade("Feira Nova");
-
 		AlunoDAO dao = new AlunoDAO();
+
+		Aluno aluno = dao.buscarPorCodigo(1L);
+
+		aluno.setCidade("Limoeiro");
+
 		dao.editar(aluno);
 	}
 }

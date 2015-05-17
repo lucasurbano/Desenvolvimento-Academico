@@ -5,18 +5,25 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tbl_funcionarios")
+@NamedQueries({
+		@NamedQuery(name = "Funcionario.listar", query = "SELECT funcionario FROM Funcionario funcionario"),
+		@NamedQuery(name = "Funcionario.buscarPorCodigo", query = "SELECT funcionario FROM Funcionario funcionario WHERE funcionario.codigo =:codigo ")
+
+})
 public class Funcionario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "fun_codigo", unique = true, nullable = false)
-	private long codigo;
+	private Long codigo;
 
 	@Column(name = "fun_nome", nullable = false)
-	private long nome;
+	private String nome;
 
 	@Column(name = "fun_cpf", length = 14, unique = true, nullable = false)
 	private String cpf;
@@ -33,16 +40,16 @@ public class Funcionario {
 	@Column(name = "fun_estado", length = 20, nullable = false)
 	private String estado;
 
-	@Column(name = "fun_telefone", length = 25, nullable = false)
-	private String telefone;
+	@Column(name = "fun_senha", length = 25, nullable = false)
+	private String senha;
 
 	@Column(name = "fun_celular", length = 25, nullable = false)
 	private String celular;
 
-	@Column(name = "fun_email", length = 60, nullable = false)
-	private String email;
+	@Column(name = "fun_funcao", length = 50, nullable = false)
+	private String funcao;
 
-	public long getCodigo() {
+	public Long getCodigo() {
 		return codigo;
 	}
 
@@ -50,11 +57,11 @@ public class Funcionario {
 		this.codigo = codigo;
 	}
 
-	public long getNome() {
+	public String getNome() {
 		return nome;
 	}
 
-	public void setNome(long nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
@@ -98,12 +105,12 @@ public class Funcionario {
 		this.estado = estado;
 	}
 
-	public String getTelefone() {
-		return telefone;
+	public String getSenha() {
+		return senha;
 	}
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	public String getCelular() {
@@ -114,12 +121,20 @@ public class Funcionario {
 		this.celular = celular;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getfuncao() {
+		return funcao;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setfuncao(String funcao) {
+		this.funcao = funcao;
+	}
+
+	@Override
+	public String toString() {
+		return "Funcionario [codigo=" + codigo + ", nome=" + nome + ", cpf="
+				+ cpf + ", endereco=" + endereco + ", cidade=" + cidade
+				+ ", bairro=" + bairro + ", estado=" + estado + ", senha="
+				+ senha + ", celular=" + celular + ", funcao=" + funcao + "]";
 	}
 
 }
