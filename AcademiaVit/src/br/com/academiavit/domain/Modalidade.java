@@ -1,5 +1,6 @@
 package br.com.academiavit.domain;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -26,12 +27,17 @@ public class Modalidade {
 	@Column(name = "mod_nome", nullable = false)
 	private String nome;
 
+	@Column(name = "mod_valor", precision = 7, scale = 2, nullable = false)
+	private BigDecimal valor;
+
 	@Temporal(value = TemporalType.TIMESTAMP)
-	@Column(name = "mod_horaincial", nullable = false)
+	// @Column(name = "mod_horaincial", nullable = false)
+	@Column(name = "mod_horaincial")
 	private Date horaIncial;
 
 	@Temporal(value = TemporalType.TIMESTAMP)
-	@Column(name = "mod_horafinal", nullable = false)
+	// @Column(name = "mod_horafinal", nullable = false)
+	@Column(name = "mod_horafinal")
 	private Date horaFinal;
 
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -56,6 +62,14 @@ public class Modalidade {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public BigDecimal getValor() {
+		return valor;
+	}
+
+	public void setValor(BigDecimal valor) {
+		this.valor = valor;
 	}
 
 	public Date getHoraIncial() {
@@ -89,4 +103,13 @@ public class Modalidade {
 	public void setFuncionario(Funcionario funcionario) {
 		this.funcionario = funcionario;
 	}
+
+	@Override
+	public String toString() {
+		return "Modalidade [codigo=" + codigo + ", nome=" + nome + ", valor="
+				+ valor + ", horaIncial=" + horaIncial + ", horaFinal="
+				+ horaFinal + ", aluno=" + aluno + ", funcionario="
+				+ funcionario + "]";
+	}
+
 }

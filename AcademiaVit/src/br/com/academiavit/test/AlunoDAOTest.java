@@ -10,8 +10,7 @@ import br.com.academiavit.domain.Aluno;
 
 public class AlunoDAOTest {
 	@Test
-	@Ignore
-	public void salvar() {
+		public void salvar() {
 
 		Aluno a1 = new Aluno();
 		a1.setNome("Lucas Urbano");

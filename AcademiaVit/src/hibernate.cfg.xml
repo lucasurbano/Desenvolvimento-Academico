@@ -29,7 +29,7 @@
 		<property name="show_sql">true</property>
 
 		<!-- Cria tabelas -->
-		<property name="hbm2ddl.auto">validate</property>
+		<property name="hbm2ddl.auto">update</property>
 
 		<mapping class="br.com.academiavit.domain.Aluno" />
 		<mapping class="br.com.academiavit.domain.Frequencia" />
