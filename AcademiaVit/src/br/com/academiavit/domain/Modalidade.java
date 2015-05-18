@@ -11,12 +11,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "tbl_modalidades")
+@NamedQueries({
+		@NamedQuery(name = "Modalidade.listar", query = "SELECT modalidade FROM Modalidade modalidade"),
+		@NamedQuery(name = "Modalidade.buscarPorCodigo", query = "SELECT modalidade FROM Modalidade modalidade WHERE modalidade.codigo =:codigo ")
+
+})
 public class Modalidade {
 
 	@Id
