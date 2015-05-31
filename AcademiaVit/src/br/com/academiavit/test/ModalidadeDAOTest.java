@@ -16,8 +16,7 @@ import br.com.academiavit.domain.Modalidade;
 
 public class ModalidadeDAOTest {
 	@Test
-	@Ignore
-	public void salvar() {
+		public void salvar() {
 
 		FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
 		Funcionario funcionario = funcionarioDAO.buscarPorCodigo(1L);
@@ -26,7 +25,7 @@ public class ModalidadeDAOTest {
 		Aluno aluno = alunoDAO.buscarPorCodigo(2L);
 
 		Modalidade modalidade = new Modalidade();
-		modalidade.setNome("MMA");
+		modalidade.setNome("ana");
 		modalidade.setValor(new BigDecimal(180.00D));
 		modalidade.setHoraIncial(new Date());
 		modalidade.setHoraFinal(new Date());

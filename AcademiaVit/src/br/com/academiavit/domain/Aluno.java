@@ -28,16 +28,16 @@ public class Aluno {
 	@Column(name = "alu_cpf", length = 14, unique = true, nullable = false)
 	private String cpf;
 
-	@Column(name = "alu_endereco", length = 60, nullable = false)
+	@Column(name = "alu_endereco", length = 60)
 	private String endereco;
 
-	@Column(name = "alu_cidade", length = 20, nullable = false)
+	@Column(name = "alu_cidade", length = 20)
 	private String cidade;
 
-	@Column(name = "alu_bairro", length = 20, nullable = false)
+	@Column(name = "alu_bairro", length = 20)
 	private String bairro;
 
-	@Column(name = "alu_estado", length = 20, nullable = false)
+	@Column(name = "alu_estado", length = 20)
 	private String estado;
 
 	@Column(name = "alu_telefone", length = 25)
@@ -46,7 +46,7 @@ public class Aluno {
 	@Column(name = "alu_celular", length = 25)
 	private String celular;
 
-	@Column(name = "alu_email", length = 60, nullable = false)
+	@Column(name = "alu_email", length = 60)
 	private String email;
 
 	public Long getCodigo() {

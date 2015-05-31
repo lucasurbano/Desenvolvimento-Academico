@@ -16,37 +16,47 @@
 			</p:toolbar>
 			<h:panelGrid columns="4">
 				<p:outputLabel value="Matricula" />
-				<p:inputText size="10" readonly="true" />
+				<p:inputText size="10" readonly="true"
+					value="#{alunoBean.alunoCadastro.codigo}" />
 
 				<p:outputLabel value="Nome" />
-				<p:inputText maxlength="50" size="50" />
+				<p:inputText maxlength="50" size="50"
+					value="#{alunoBean.alunoCadastro.nome}" />
 
 				<p:outputLabel value="CPF" />
-				<p:inputMask mask="999.999.999-99" size="50" />
+				<p:inputMask mask="999.999.999-99" size="50"
+					value="#{alunoBean.alunoCadastro.cpf}" />
 
 				<p:outputLabel value="Endereco" />
-				<p:inputText maxlength="50" size="50" />
+				<p:inputText maxlength="50" size="50"
+					value="#{alunoBean.alunoCadastro.endereco}" />
 
 				<p:outputLabel value="Cidade" />
-				<p:inputText maxlength="20" size="50" />
+				<p:inputText maxlength="20" size="50"
+					value="#{alunoBean.alunoCadastro.cidade}" />
 
 				<p:outputLabel value="Estado" />
-				<p:inputText maxlength="10" size="50" />
+				<p:inputText maxlength="10" size="50"
+					value="#{alunoBean.alunoCadastro.estado}" />
 
 				<p:outputLabel value="Telefone" />
-				<p:inputMask mask="(99) 999-9999" size="50" />
+				<p:inputMask mask="(99) 9999-9999" size="50"
+					value="#{alunoBean.alunoCadastro.telefone}" />
 
 				<p:outputLabel value="Celular" />
-				<p:inputMask mask="(99) 999-9999" size="50" />>
+				<p:inputMask mask="(99) 9999-9999" size="50"
+					value="#{alunoBean.alunoCadastro.celular}" />
 
 				<p:outputLabel value="Email" />
-				<p:inputText maxlength="50" size="50" />
+				<p:inputText maxlength="50" size="50"
+					value="#{alunoBean.alunoCadastro.email}" />
 
 
 			</h:panelGrid>
 			<h:panelGrid columns="3">
 				<p:commandButton value="Novo" />
-				<p:commandButton value="Salvar" />
+				<p:commandButton value="Salvar" actionListener="#{alunoBean.salvar}"
+					update=":msgGlobal" />
 				<p:commandButton value="Voltar"
 					action="/pages/alunoPesquisa.xhtml?faces-redirect=true" />
 

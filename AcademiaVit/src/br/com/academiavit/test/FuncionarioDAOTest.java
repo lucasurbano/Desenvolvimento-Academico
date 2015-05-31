@@ -10,6 +10,7 @@ import br.com.academiavit.domain.Funcionario;
 
 public class FuncionarioDAOTest {
 	@Test
+	@Ignore
 	public void salvar() {
 
 		Funcionario f1 = new Funcionario();
