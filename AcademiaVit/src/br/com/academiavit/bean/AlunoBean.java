@@ -26,24 +26,26 @@ public class AlunoBean {
 	public void setAlunoCadastro(Aluno alunoCadastro) {
 		this.alunoCadastro = alunoCadastro;
 	}
-	
-	public List<Aluno> getListaAlunos(){
+
+	// Lista Alunos
+	public List<Aluno> getListaAlunos() {
 		return listaAlunos;
 	}
-	
-	public void setListaAlunos(List<Aluno> listaAlunos){
+
+	public void setListaAlunos(List<Aluno> listaAlunos) {
 		this.listaAlunos = listaAlunos;
 	}
-	
-	public List<Aluno> getListaAlunosFiltrados(){
+
+	// Lista Alunos Filtrados
+	public List<Aluno> getListaAlunosFiltrados() {
 		return listaAlunosFiltrados;
 	}
-	
-	public void setListaAlunosFiltrados(List<Aluno> listaAlunosFiltrados){
+
+	public void setListaAlunosFiltrados(List<Aluno> listaAlunosFiltrados) {
 		this.listaAlunosFiltrados = listaAlunosFiltrados;
 	}
-	
-	public void novo(){
+
+	public void novo() {
 		alunoCadastro = new Aluno();
 	}
 
@@ -51,25 +53,23 @@ public class AlunoBean {
 		try {
 			AlunoDAO alunoDAO = new AlunoDAO();
 			alunoDAO.salvar(alunoCadastro);
-			
+
 			alunoCadastro = new Aluno();
 
 			FacesUtil.adicionarMsgInfo("Aluno Salvo com sucesso");
 		} catch (RuntimeException ex) {
-			ex.printStackTrace();
 			FacesUtil.adicionarMsgErro("Erro ao tentar incluir o aluno: "
 					+ ex.getMessage());
 		}
 	}
-	
-public void carregar(){
-		try{
+
+	public void carregar() {
+		try {
 			AlunoDAO alunoDAO = new AlunoDAO();
 			listaAlunos = alunoDAO.listar();
-		}catch (RuntimeException ex) {
-			ex.printStackTrace();
+		} catch (RuntimeException ex) {
 			FacesUtil.adicionarMsgErro("Erro ao tentar listar os alunos: "
 					+ ex.getMessage());
-	}
+		}
 	}
 }
