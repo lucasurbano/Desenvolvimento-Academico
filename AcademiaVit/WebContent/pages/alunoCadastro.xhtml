@@ -8,13 +8,14 @@
 
 <ui:composition template="/templates/modeloGeral.xhtml">
 	<ui:define name="conteudo">
-		<h:form>
+		<h:form id="frmAluCad">
 			<p:toolbar>
 				<f:facet name="left">
 					<h:outputText value="Alunos" />
 				</f:facet>
 			</p:toolbar>
-			<h:panelGrid columns="4">
+			
+			<h:panelGrid id="pnlAluCadDados" columns="4">
 				<p:outputLabel value="Matricula" />
 				<p:inputText size="10" readonly="true"
 					value="#{alunoBean.alunoCadastro.codigo}" />
@@ -54,9 +55,9 @@
 
 			</h:panelGrid>
 			<h:panelGrid columns="3">
-				<p:commandButton value="Novo" />
+				<p:commandButton value="Novo" actionListener="#{alunoBean.novo}" update=":frmAluCad:pnlAluCadDados"/>
 				<p:commandButton value="Salvar" actionListener="#{alunoBean.salvar}"
-					update=":msgGlobal" />
+					update=":msgGlobal :frmAluCad:pnlAluCadDados" />
 				<p:commandButton value="Voltar"
 					action="/pages/alunoPesquisa.xhtml?faces-redirect=true" />
 
